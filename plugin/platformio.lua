@@ -14,13 +14,13 @@ end, {})
 
 -- Piodb
 vim.api.nvim_create_user_command('Piodb', function()
-  require('platformio.Piodb').Piodb()
+  require('platformio.piodb').Piodb()
 end, {})
 
 -- Piorun
 vim.api.nvim_create_user_command('Piorun', function(opts)
   local args = opts.args
-  require('platformio.Piorun').Piorun { args }
+  require('platformio.piorun').Piorun { args }
 end, {
   nargs = '?',
   complete = function(_, _, _)
@@ -31,7 +31,7 @@ end, {
 -- Piomon
 vim.api.nvim_create_user_command('Piomon', function(opts)
   local args = opts.args
-  require('platformio.Piomon').Piomon { args }
+  require('platformio.piomon').Piomon { args }
 end, {
   nargs = '?',
   complete = function(_, _, _)
@@ -42,7 +42,7 @@ end, {
 -- Piolib
 vim.api.nvim_create_user_command('Piolib', function(opts)
   local args = vim.split(opts.args, ' ')
-  require('platformio.Piolib').Piolib(args)
+  require('platformio.piolib').Piolib(args)
 end, {
   nargs = '+',
 })
@@ -50,12 +50,12 @@ end, {
 -- Piocmd
 vim.api.nvim_create_user_command('Piocmd', function(opts)
   local cmd_table = vim.split(opts.args, ' ')
-  require('platformio.Piocmd').Piocmd(cmd_table)
+  require('platformio.piocmd').Piocmd(cmd_table)
 end, {
   nargs = '*',
 })
 
 -- Piodebug
 vim.api.nvim_create_user_command('Piodebug', function()
-  require('platformio.Piodebug').Piodebug()
+  require('platformio.piodebug').Piodebug()
 end, {})
