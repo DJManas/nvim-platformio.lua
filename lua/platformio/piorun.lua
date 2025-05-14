@@ -23,7 +23,7 @@ end
 function M.pioclean()
   utils.cd_pioini()
   local command = 'pio run --target clean' .. utils.extra
-  utils.ToggleTerminal(command, 'vertical')
+  utils.ToggleTerminal(command, 'horizontal')
 end
 
 function M.piorun(arg_table)
